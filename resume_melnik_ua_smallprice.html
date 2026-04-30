@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Олександр Мельник</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-info h1 {
+            margin: 0;
+            font-size: 2.2em;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-info p {
+            margin: 5px 0;
+            font-size: 1.2em;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.95em;
+        }
+
+        section {
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 1.4em;
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skills-list li {
+            background: #e1f0fa;
+            color: #2980b9;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .job {
+            margin-bottom: 20px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .job-company {
+            color: var(--accent-color);
+            font-style: italic;
+        }
+
+        .job-date {
+            font-size: 0.9em;
+            color: #777;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.85em;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; text-align: center; }
+            .contact-info { text-align: center; margin-top: 20px; }
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="header-info">
+            <h1>Олександр Мельник</h1>
+            <p>Асистент контент-менеджера / Адміністратор сайту</p>
+        </div>
+        <div class="contact-info">
+            Запоріжжя, Україна (Віддалено)<br>
+            Email: melnik.design.dev@gmail.com<br>
+            GitHub: oficiallink.github.io
+        </div>
+    </header>
+
+    <section>
+        <h2>Про себе</h2>
+        <p>
+            Дипломований дизайнер з глибоким розумінням візуальної естетики та технічним досвідом у веб-розробці (HTML/CSS/JS). Маю практичний досвід наповнення інтернет-магазинів, роботи з професійним обладнанням та адміністрування складних проектів. Шукаю можливість застосувати свої навички роботи з графікою та CMS для розвитку бренду <strong>SmallPrice</strong>.
+        </p>
+    </section>
+
+    <div class="grid">
+        <section>
+            <h2>Ключові навички</h2>
+            <ul class="skills-list">
+                <li>WordPress</li>
+                <li>Tilda</li>
+                <li>Adobe Photoshop</li>
+                <li>Canva</li>
+                <li>HTML5 / CSS3</li>
+                <li>Контент-менеджмент</li>
+                <li>Адміністрування сайтів</li>
+                <li>Копірайтинг / Редагування</li>
+                <li>Google Sheets / Excel</li>
+                <li>Робота з маркетплейсами</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Освіта</h2>
+            <div class="job">
+                <div class="job-title">Дизайнер</div>
+                <div class="job-company">Завершена профільна освіта</div>
+                <p>Початкові знання в галузі економіки та розробки ПЗ дозволяють мені ефективно працювати з характеристиками товарів та технічною частиною CMS.</p>
+            </div>
+        </section>
+    </div>
+
+    <section>
+        <h2>Досвід роботи</h2>
+        
+         <div class="job">
+            <div class="job-title">Менеджер з продажу </div>
+            <div class="job-company">Торговельні проєкти</div>
+            <ul>
+                <li>Консультування клієнтів та повний супровід угод через CRM.</li>
+                <li>Обробка заперечень та робота з клієнтською базою.</li>
+                <li>Збільшення лояльності клієнтів завдяки якісній презентації продукту.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Адміністратор / Контент-менеджер</div>
+            <div class="job-company">foodboss.shop</div>
+            <div class="job-date">2026</div>
+            <ul>
+                <li>Масове введення даних та наповнення карток товарів (професійне кухонне обладнання).</li>
+                <li>Переклад та адаптація описів товарів, робота з технічними характеристиками.</li>
+                <li>Оптимізація зображень для веб-середовища.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Адміністратор / Трейдер</div>
+            <div class="job-company">Приватні проєкти (invest zone, Deki та ін.)</div>
+            <ul>
+                <li>Оперативне управління контентом та комунікаціями.</li>
+                <li>Моніторинг даних та робота в умовах високої відповідальності.</li>
+                <li>Використання AI-інструментів для автоматизації робочих процесів.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-title">Frontend Developer (Freelance)</div>
+            <div class="job-company">Особисті проєкти</div>
+            <ul>
+                <li>Розробка лендингів та адаптивна верстка.</li>
+                <li>Розуміння структури DOM, що дозволяє вносити правки в шаблони WordPress та Tilda на рівні коду.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Особисті якості</h2>
+        <p>Уважність до деталей, організованість, грамотність. Вільно володію необхідним ПЗ та швидко адаптуюсь до нових систем управління контентом.</p>
+    </section>
+
+    <footer>
+        Резюме підготовлено спеціально для вакансії в SmallPrice | 2026
+    </footer>
+</div>
+
+</body>
+</html>
