@@ -1,241 +1,225 @@
-
 <!DOCTYPE html>
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме - Олександр Мельник</title>
+    <title>Олександр Мельник | Resume</title>
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --text-color: #333;
-            --bg-color: #f4f7f6;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --accent: #38bdf8;
+            --accent-grad: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+            --text-main: #f1f5f9;
+            --text-dim: #94a3b8;
         }
 
+        * { box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
             margin: 0;
-            padding: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 30px auto;
-            background: #fff;
+        .resume-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 24px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: rgba(15, 23, 42, 0.5);
             padding: 40px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        header {
-            border-bottom: 3px solid var(--accent-color);
-            padding-bottom: 20px;
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            background: var(--accent-grad);
+            border-radius: 30px;
             margin-bottom: 30px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-        }
-
-        .header-info h1 {
-            margin: 0;
-            font-size: 2.2em;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .header-info p {
-            margin: 5px 0;
-            font-size: 1.2em;
-            color: var(--accent-color);
+            justify-content: center;
+            font-size: 40px;
             font-weight: bold;
-        }
-
-        .contact-info {
-            text-align: right;
-            font-size: 0.95em;
-        }
-
-        section {
-            margin-bottom: 30px;
+            color: white;
         }
 
         h2 {
-            font-size: 1.4em;
-            color: var(--primary-color);
-            border-left: 5px solid var(--accent-color);
-            padding-left: 15px;
-            margin-bottom: 15px;
+            font-size: 14px;
             text-transform: uppercase;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .skills-list {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .skills-list li {
-            background: #e1f0fa;
-            color: #2980b9;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: 600;
-        }
-
-        .job {
+            letter-spacing: 2px;
+            color: var(--accent);
             margin-bottom: 20px;
-        }
-
-        .job-title {
-            font-weight: bold;
-            font-size: 1.1em;
-            color: #333;
-        }
-
-        .job-company {
-            color: var(--accent-color);
-            font-style: italic;
-        }
-
-        .job-date {
-            font-size: 0.9em;
-            color: #777;
-            margin-bottom: 5px;
-        }
-
-        footer {
             margin-top: 40px;
-            text-align: center;
-            font-size: 0.85em;
-            color: #888;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
         }
 
-        @media (max-width: 600px) {
-            .grid { grid-template-columns: 1fr; }
-            header { flex-direction: column; text-align: center; }
-            .contact-info { text-align: center; margin-top: 20px; }
-            .container { padding: 20px; }
+        .contact-link {
+            display: block;
+            color: var(--text-dim);
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .contact-link:hover { color: var(--accent); }
+
+        .skill-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            padding: 6px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            margin: 0 5px 10px 0;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 60px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+            letter-spacing: -1px;
+            background: var(--accent-grad);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            font-size: 18px;
+            color: var(--text-dim);
+            margin: 10px 0 0 0;
+        }
+
+        .section-block { margin-bottom: 50px; }
+
+        .job-card {
+            position: relative;
+            padding-left: 25px;
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+        .job-card::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 15px var(--accent);
+        }
+
+        .job-title { font-size: 20px; font-weight: 600; }
+        .job-company { color: var(--accent); font-weight: 500; margin-bottom: 8px; }
+        .job-desc { color: var(--text-dim); font-size: 15px; }
+
+        .why-me-card {
+            background: var(--accent-grad);
+            padding: 30px;
+            border-radius: 20px;
+            color: white;
+            position: relative;
+        }
+        .why-me-card p { margin: 0; font-size: 16px; font-weight: 500; line-height: 1.5; }
+
+        @media (max-width: 850px) {
+            .resume-container { grid-template-columns: 1fr; }
+            .sidebar { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        }
+
+        @media print {
+            body { padding: 0; background: white; }
+            .resume-container { box-shadow: none; border: none; width: 100%; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <div class="header-info">
-            <h1>Олександр Мельник</h1>
-            <p>Асистент контент-менеджера / Адміністратор сайту</p>
-        </div>
-        <div class="contact-info">
-            Запоріжжя, Україна (Віддалено)<br>
-            Email: moondog13666@gmail.com<br>
-            Тел: +380 93 427 35 43<br>
-            Телеграм: @Just_dude13<br>
-        </div>
-    </header>
+<div class="resume-container">
+    <aside class="sidebar">
+        <div class="profile-img">OM</div>
+        
+        <h2>Контакти</h2>
+        <a href="tel:+380934273543" class="contact-link">📞 +380 93 427 35 43</a>
+        <a href="mailto:moondog13666@gmail.com" class="contact-link">✉️ moondog13666@gmail.com</a>
+        <a href="#" class="contact-link">✈️ @Just_dude13</a>
+        <p class="contact-link">📍 Запоріжжя (Remote)</p>
 
-    <section>
-        <h2>Про себе</h2>
-        <p>
-            Дипломований дизайнер з глибоким розумінням візуальної естетики та технічним досвідом у веб-розробці (HTML/CSS/JS). Маю практичний досвід наповнення інтернет-магазинів, роботи з професійним обладнанням та адміністрування складних проектів. Шукаю можливість застосувати свої навички роботи з графікою та CMS для розвитку бренду <strong>SmallPrice</strong>.
+        <h2>Компетенції</h2>
+        <div class="skill-badge">Direct Sales</div>
+        <div class="skill-badge">Objection Handling</div>
+        <div class="skill-badge">KeyCRM / Bitrix</div>
+        <div class="skill-badge">Photoshop</div>
+        <div class="skill-badge">Canva</div>
+        <div class="skill-badge">React / JS</div>
+        <div class="skill-badge">High-Speed Response</div>
+
+        <h2>Освіта</h2>
+        <p style="font-size: 14px; color: var(--text-dim);">
+            <strong>Дизайнер</strong><br>
+            Професійне бачення візуалу та трендів.
         </p>
-    </section>
+    </aside>
 
-    <div class="grid">
-        <section>
-            <h2>Ключові навички</h2>
-            <ul class="skills-list">
-                <li>WordPress</li>
-                <li>Tilda</li>
-                <li>Adobe Photoshop</li>
-                <li>Canva</li>
-                <li>HTML5 / CSS3</li>
-                <li>Контент-менеджмент</li>
-                <li>Адміністрування сайтів</li>
-                <li>Копірайтинг / Редагування</li>
-                <li>Google Sheets / Excel</li>
-                <li>Робота з маркетплейсами</li>
-            </ul>
+    <main class="main-content">
+        <header class="section-block">
+            <h1>Олександр Мельник</h1>
+            <p>Sales Manager & Digital Administrator</p>
+        </header>
+
+        <section class="section-block">
+            <h2>Профіль</h2>
+            <p class="job-desc">
+                Менеджер з продажу з аналітичним мисленням та дизайнерським підходом. Я не просто листуюся — я створюю цінність. Завдяки досвіду в IT та дизайні, я автоматизую свою роботу та надаю клієнтам експертну консультацію, яка конвертується в оплату.
+            </p>
         </section>
 
-        <section>
-            <h2>Освіта</h2>
-            <div class="job">
-                <div class="job-title">Дизайнер</div>
-                <div class="job-company">Завершена профільна освіта</div>
-                <p>Початкові знання в галузі економіки та розробки ПЗ дозволяють мені ефективно працювати з характеристиками товарів та технічною частиною CMS.</p>
+        <section class="section-block">
+            <h2>Досвід роботи</h2>
+            
+            <div class="job-card">
+                <div class="job-title">Sales & Direct Manager</div>
+                <div class="job-company">E-commerce / Retail</div>
+                <p class="job-desc">Закриття угод у месенджерах, обробка заперечень, ведення CRM. Орієнтація на LTV клієнта та середній чек.</p>
+            </div>
+
+            <div class="job-card">
+                <div class="job-title">Content Manager / Administrator</div>
+                <div class="job-company">foodboss.shop</div>
+                <p class="job-desc">Повне управління товарною сіткою, оптимізація контенту та технічна підтримка платформи.</p>
+            </div>
+
+            <div class="job-card">
+                <div class="job-title">Frontend Developer</div>
+                <div class="job-company">Freelance Projects</div>
+                <p class="job-desc">Розробка інтерфейсів. Навичка, що дозволяє мені розуміти "бекграунд" будь-якого онлайн-бізнесу.</p>
             </div>
         </section>
-    </div>
 
-    <section>
-        <h2>Досвід роботи</h2>
-        
-         <div class="job">
-            <div class="job-title">Менеджер з продажу </div>
-            <div class="job-company">Торговельні проєкти</div>
-            <ul>
-                <li>Консультування клієнтів та повний супровід угод через CRM.</li>
-                <li>Обробка заперечень та робота з клієнтською базою.</li>
-                <li>Збільшення лояльності клієнтів завдяки якісній презентації продукту.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-title">Адміністратор / Контент-менеджер</div>
-            <div class="job-company">foodboss.shop</div>
-            <div class="job-date">2026</div>
-            <ul>
-                <li>Масове введення даних та наповнення карток товарів (професійне кухонне обладнання).</li>
-                <li>Переклад та адаптація описів товарів, робота з технічними характеристиками.</li>
-                <li>Оптимізація зображень для веб-середовища.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-title">Адміністратор / Трейдер</div>
-            <div class="job-company">Приватні проєкти (invest zone, Deki та ін.)</div>
-            <ul>
-                <li>Оперативне управління контентом та комунікаціями.</li>
-                <li>Моніторинг даних та робота в умовах високої відповідальності.</li>
-                <li>Використання AI-інструментів для автоматизації робочих процесів.</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-title">Frontend Developer (Freelance)</div>
-            <div class="job-company">Особисті проєкти</div>
-            <ul>
-                <li>Розробка лендингів та адаптивна верстка.</li>
-                <li>Розуміння структури DOM, що дозволяє вносити правки в шаблони WordPress та Tilda на рівні коду.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
-        <h2>Особисті якості</h2>
-        <p>Уважність до деталей, організованість, грамотність. Вільно володію необхідним ПЗ та швидко адаптуюсь до нових систем управління контентом.</p>
-    </section>
-
-    <footer>
-        Резюме підготовлено спеціально для вакансії в SmallPrice | 2026
-    </footer>
+        <section>
+            <div class="why-me-card">
+                <p>"Я поєдную швидкість IT-розробника, око дизайнера та наполегливість сейлза. Мій пріоритет — ідеальний клієнтський сервіс та прибуток компанії."</p>
+            </div>
+        </section>
+    </main>
 </div>
 
 </body>
